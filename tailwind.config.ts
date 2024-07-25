@@ -15,7 +15,8 @@ const config: Config = {
           300: "#525252",
         },
         base: "#FFFFFF",
-        second: "#18181B"
+        second: "#18181B",
+        primary: "#0284C7"
       }
     },
   },
