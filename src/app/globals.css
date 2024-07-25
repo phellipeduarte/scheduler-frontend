@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  color: #1E1E1E;
-  background-color: #FFFFFF;
-}
 
 @layer utilities {
   .text-balance {

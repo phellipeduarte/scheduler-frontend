@@ -7,7 +7,7 @@ interface NavlinkProps {
 
 export default function Navlink({ to, text }: NavlinkProps) {
     return (
-        <Link href={to} className="hover:text-white transition-colors px-6 py-3" prefetch={false}>
+        <Link href={to} className="hover:text-white transition-colors" prefetch={false}>
             {text}
         </Link>
     )

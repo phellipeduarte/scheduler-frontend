@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
 
-      <body className={raleway.className}>
+      <body className={raleway.className + " bg-base text-second"}>
         <Navbar />
         {children}
         <Footer />

@@ -1,26 +1,38 @@
+"use client";
+import { useState, useEffect } from "react";
 import Profile from "./components/ui/profile"
 
 interface Person {
     name: string,
-    label: string
+    title: string
 }
 
 
-export default function page() {
+export default function Page() {
 
 
-    const b1: Person = { name: "Phillip", label: "Barbeiro profissional" }
-    const b2: Person = { name: "Phillip", label: "Barbeiro profissional" }
-    const b3: Person = { name: "Phillip", label: "Barbeiro profissional" }
-    const barbers = [b1, b2, b3]
+    const [attendants, setAttendants] = useState([])
+
+    const getAttendants = async (url: string) => {
+        const res = await fetch(url)
+        if (res.ok) {
+            const data = await res.json()
+            setAttendants(data)
+        }
+    }
+
+    useEffect(() => {
+        const url = process.env.BASE_URL + "/attendant/establishment/" + process.env.ESTABLISHMENT
+        getAttendants(url)
+    })
 
     return (
-        <main className="container py-8 px-4 w-full max-w-screen-xl mx-auto">
-            <h1 className="text-5xl font-bold mb-6">Conheça nossos barbeiros</h1>
+        <main className="container py-4 md:py-8 px-4 w-full max-w-screen-xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Conheça nossos barbeiros</h1>
             <div className="flex flex-wrap justify-center md:justify-start md:flex-row gap-2">
-                {barbers && barbers.map((barber: Person, key: number) =>
-                    <div key={key} className="bg-card rounded-lg shadow-md overflow-hidden px-8 py-6 w-full md:w-auto">
-                        <Profile name={barber.name} label={barber.label} />
+                {attendants && attendants.map((attendant: Person, key: number) =>
+                    <div key={key} className="bg-shade-100 rounded overflow-hidden px-8 py-6 w-full md:w-auto">
+                        <Profile name={attendant.name} label={attendant.title} />
                     </div>)}
             </div>
         </main>
