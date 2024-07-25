@@ -31,7 +31,7 @@ export default function Page() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Conheça nossos barbeiros</h1>
             <div className="flex flex-wrap justify-center md:justify-start md:flex-row gap-2">
                 {attendants && attendants.map((attendant: Person, key: number) =>
-                    <div key={key} className="bg-shade-100 rounded overflow-hidden px-8 py-6 w-full md:w-auto">
+                    <div key={key} className="bg-shade-100 rounded overflow-hidden px-8 py-6 w-full md:w-1/3">
                         <Profile name={attendant.name} label={attendant.title} />
                     </div>)}
             </div>
