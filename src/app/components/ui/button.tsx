@@ -1,6 +1,4 @@
-'use client'
-
-import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 
 export enum TypeEnum {
     Main = "bg-primary text-base",
@@ -14,9 +12,7 @@ interface ButtonProps {
 }
 
 export default function Button({ text, to, type }: ButtonProps) {
-    const router = useRouter()
-
     return (
-        <button className={type + " text-xl font-bold uppercase rounded-md w-full py-1"} onClick={() => router.push(to)}>{text}</button>
+        <Link className={type + " text-xl font-bold uppercase rounded-md w-full flex justify-center py-1"} href={to}>{text}</Link>
     )
 }
