@@ -4,7 +4,8 @@ import Badge from "../components/ui/badge";
 interface Attendant {
     uuid: string,
     name: string,
-    title: string
+    title: string,
+    imageUrl: string
 }
 
 interface Service {
@@ -29,7 +30,7 @@ export default async function Page() {
             <div className="flex flex-wrap justify-center md:justify-start md:flex-row gap-2 mb-5">
                 {attendants.map((attendant: Attendant, key: number) =>
                     <div key={key} className="bg-shade-100 rounded overflow-hidden px-5 py-4 w-full md:w-1/3">
-                        <Profile index={key} name={attendant.name} title={attendant.title} />
+                        <Profile index={key} name={attendant.name} title={attendant.title} imageUrl={attendant.imageUrl} />
                     </div>)}
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-3">Conheça nossos serviços</h1>
