@@ -9,8 +9,8 @@ interface ScheduleProps {
 export default async function Schedule({ index }: ScheduleProps) {
 
     const urlAttendants = process.env.BASE_URL + "attendant/establishment/" + process.env.ESTABLISHMENT
-    const responseAttendants = await fetch(urlAttendants)
-    const attendants = await responseAttendants.json()
+    let responseAttendants = await fetch(urlAttendants)
+    let attendants = await responseAttendants.json()
 
     return (
         <>

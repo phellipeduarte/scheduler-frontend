@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { ReactHTMLElement } from 'react'
 
 export enum TypeEnum {
     Main = "bg-primary text-base",

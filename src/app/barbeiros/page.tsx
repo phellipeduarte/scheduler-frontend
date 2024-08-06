@@ -17,11 +17,11 @@ export default async function Page() {
     const urlAttendants = process.env.BASE_URL + "attendant/establishment/" + process.env.ESTABLISHMENT
     const urlServices = process.env.BASE_URL + "job/establishment/" + process.env.ESTABLISHMENT
 
-    const responseAttendants = await fetch(urlAttendants)
-    const responseServices = await fetch(urlServices)
+    let responseAttendants = await fetch(urlAttendants)
+    let responseServices = await fetch(urlServices)
 
-    const attendants = await responseAttendants.json()
-    const services = await responseServices.json()
+    let attendants = await responseAttendants.json()
+    let services = await responseServices.json()
 
     return (
         <main className="container py-4 md:py-4 px-4 w-full max-w-screen-xl mx-auto">

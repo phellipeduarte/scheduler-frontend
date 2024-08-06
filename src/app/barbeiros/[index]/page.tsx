@@ -5,8 +5,8 @@ export default async function page({ params }: { params: { index: number } }) {
 
     const urlAttendants = process.env.BASE_URL + "attendant/establishment/" + process.env.ESTABLISHMENT
     const responseAttendants = await fetch(urlAttendants)
-    const attendants = await responseAttendants.json()
-    const attendant = attendants[params.index - 1]
+    let attendants = await responseAttendants.json()
+    let attendant = attendants[params.index - 1]
 
     return (
         <main className="container py-4 md:py-4 px-4 w-full max-w-screen-xl mx-auto">
