@@ -16,7 +16,8 @@ const config: Config = {
         },
         base: "#FFFFFF",
         second: "#18181B",
-        primary: "#0284C7"
+        primary: "#0284C7",
+        whatsapp: "#25D366"
       }
     },
   },

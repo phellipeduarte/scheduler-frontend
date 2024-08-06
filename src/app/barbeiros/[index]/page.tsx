@@ -27,7 +27,7 @@ export default async function page({ params }: { params: { index: number } }) {
                 <p className="font-medium pb-5 text-justify">{attendant.description}</p>
                 <div className="flex flex-col md:flex-row gap-2">
                     <div className="md:w-2/5">
-                        <Button text="agendar" to="/" type={TypeEnum.Main} />
+                        <Button text="agendar" to={"/agendar/barbeiro/" + params.index} type={TypeEnum.Main} />
                     </div>
                     <div className="md:w-2/5">
                         <Button text="voltar" to="/barbeiros" type={TypeEnum.Sec} />

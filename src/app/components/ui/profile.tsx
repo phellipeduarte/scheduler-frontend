@@ -24,7 +24,7 @@ export default async function Profile(attendant: Attendant) {
                 </div>
             </div>
             <div className="flex flex-col md:flex-row gap-2 ">
-                <Button text="Agendar" type={TypeEnum.Main} to={"/barbeiros/" + (attendant.index + 1)} />
+                <Button text="Agendar" type={TypeEnum.Main} to={"/agendar/barbeiro/" + (attendant.index + 1)} />
                 <Button text="Conhecer" type={TypeEnum.Sec} to={"/barbeiros/" + (attendant.index + 1)} />
             </div>
         </>
